@@ -19,13 +19,15 @@
     </head>
     <body>
         <div class="container">
-            <div class="col-sm-12">
-                <header class="row">
-                    <h2><center><a href="index.php">Controle de Produtos</a></center></h2>
-                </header>
+            <div class="row">
+                <div class="col-sm-12">
+                    <header>
+                        <h2><center><a href="index.php">Controle de Produtos</a></center></h2>
+                    </header>
+                </div>
             </div>
-            <div class="col-sm-12">
-                <div class="row">
+            <div class="row">
+                <div class="col-sm-12">
                     <div role="main">
                         <form method="post" action="index.php">
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -52,38 +54,42 @@
                                 </div>
                             </div>
                         </form>
-
-                        <?php
-                        include 'Data\ConnectDataBase.php';
-                        if (isset($_POST['marcas'])) {
-                            include 'marca\marcas.php';
-                        } elseif (isset($_POST['unidade'])) {
-                            include 'unidade\unidades.php';
-                        } elseif (isset($_POST['produto'])) {
-                            include 'produto\produto.php';
-                        } elseif (isset($_POST['orcamento'])) {
-                            include 'orcamento\orcamento.php';
-                        } elseif (isset($_POST['empresa'])) {
-                            include 'empresa\empresa.php';
-                        } elseif (isset($_POST['usuario'])) {
-                            include 'usuario\usuario.php';
-                        } else {
-                            include 'Home\homepage.php';
-                        }
-                        ?>
                     </div>
                 </div>
             </div>
-        </div>
+            
 
-        <div class="col-sm-12">
-            <footer class="row">
-                <div >
-                    <p><center>&COPY; Desenvolvido por Leonardo Magalhães.</center></p>
-                </div>
-            </footer>
-        </div>
+            
+                <?php
+                include 'Data\ConnectDataBase.php';
+                if (isset($_POST['marcas'])) {
+                    include 'marca\marcas.php';
+                } elseif (isset($_POST['unidade'])) {
+                    include 'unidade\unidades.php';
+                } elseif (isset($_POST['produto'])) {
+                    include 'produto\produto.php';
+                } elseif (isset($_POST['orcamento'])) {
+                    include 'orcamento\orcamento.php';
+                } elseif (isset($_POST['empresa'])) {
+                    include 'empresa\empresa.php';
+                } elseif (isset($_POST['usuario'])) {
+                    include 'usuario\usuario.php';
+                } else {
+                    include 'Home\homepage.php';
+                }
+                ?>
 
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <footer class="row">
+                    <div >
+                        <p><center>&COPY; Desenvolvido por Leonardo Magalhães.</center></p>
+                    </div>
+                </footer>
+            </div>
+        </div>
         <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
         <script src="js/jquery.min.js"></script>
         <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
