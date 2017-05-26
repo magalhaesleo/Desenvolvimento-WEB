@@ -1,10 +1,12 @@
-
 <div class="col-sm-3 bg-info">
     <!--Botão Cadastrar-->
     <br>
     <div class="btn-group-vertical">
-        <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#myModal" data-placement="right">
+        <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#ModalNewMarca" data-placement="right">
             Nova Marca
+        </button>
+        <button type="button" class="btn btn-default btn-block" data-toggle="modal" data-target="#myModal" data-placement="right">
+            Excluir todas
         </button>
     </div>
     <br><br><br><br><br><br><br><br><br>
@@ -12,7 +14,7 @@
 
 <!-- Modal -->
 <div class="col-sm-9">
-    <div class="modal fade bs-example-modal-lg"  tabindex="-1" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade bs-example-modal-lg"  tabindex="-1" id="ModalNewMarca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <form method="post" action="marca\salva_marca.php">
@@ -69,6 +71,10 @@
                     echo "<button type='button' class='btn btn-default btn-xs' ";
                     echo 'onclick="deleteMarca(' . $row["id_marca"] . ',\'' . $row["nome"] . '\')" data-toggle="modal" >';
                     echo '<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>';
+                    echo '</button>';
+                    echo "<button type='button' class='btn btn-default btn-xs' ";
+                    echo 'onclick="ViewMarca(\'' . $row["nome"] . '\')" data-toggle="modal" >';
+                    echo '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>';
                     echo '</button></center>';
                     echo '</td>';
                     echo "</tr>";
@@ -126,6 +132,27 @@
             </div>
         </div>
     </div>
+    
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" id="ModalViewMarca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Visualizar Marca</h4>
+                </div>
+                <form method="post" action="marca\updateMarca.php">
+                    <div class="modal-body">
+                        <p id="ViewMarca"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript">
@@ -140,5 +167,10 @@
         $('#ModalDeleteMarca').modal('show');
         document.getElementById("idmarca1").value = arg1;
         document.getElementById("LabelHeaderRemoveMarca").innerHTML = "Tem certeza que deseja remover a marca: " + arg2;
+    }
+    function ViewMarca(arg1)
+    {
+        $('#ModalViewMarca').modal('show');
+        document.getElementById("ViewMarca").innerHTML = arg1;
     }
 </script>

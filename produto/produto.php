@@ -24,11 +24,18 @@
                         </div>
                         <div class="form-group">
                             <label for="sel1">Selecione uma marca:</label>
-                            <select class="form-control" name="id_marca">
-                                <option>marca 1</option>
-                                <option>marca 2</option>
-                                <option>marca 3</option>
-                                <option>marca 4</option>
+                            <select class="form-control" name="marca">
+                                <?php
+                                $sql = "select id_marca, nome from marcas";
+                                $result = mysqli_query($DBConn, $sql);
+                                if (mysqli_num_rows($result) > 0) 
+                                {
+                                    while($row = mysqli_fetch_assoc($result))
+                                    {
+                                        echo "<option value=". $row["id_marca"] .">".$row["nome"]."</option>";
+                                    }
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="form-group">

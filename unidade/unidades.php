@@ -1,9 +1,14 @@
-<div class="row">
-    <!--Botão Cadastrar-->
-    <button type="button" class="btn btn-default pull-left" data-toggle="modal" data-target="#myModal" data-placement="right">
-        Cadastrar novo
-    </button>
 
+<div class="col-md-3 bg-info">
+    <div class="btn-group-vertical">
+        <!--Botão Cadastrar-->
+        <button type="button" class="btn btn-default pull-left" data-toggle="modal" data-target="#myModal" data-placement="right">
+            Cadastrar novo
+        </button>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+</div>
+<div class="col-md-9">
     <!-- Modal -->
     <div class="modal fade bs-example-modal-lg"  tabindex="-1" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
@@ -25,30 +30,29 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
 
-        <h3><center>Unidades cadastradas:</center></h3>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Marca</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Marca 1</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Marca 2</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Marca 3</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+    <h3>Unidades cadastradas:</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Marca 1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Marca 2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Marca 3</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

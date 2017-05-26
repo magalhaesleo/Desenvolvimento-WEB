@@ -58,8 +58,6 @@
                 </div>
             </div>
             
-
-            
                 <?php
                 include 'Data\ConnectDataBase.php';
                 if (isset($_POST['marcas'])) {
