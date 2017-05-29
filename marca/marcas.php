@@ -14,6 +14,7 @@
 
 <!-- Modal -->
 <div class="col-sm-9">
+    <?php $_SESSION['pageMarcas'] = "on"; ?>
     <div class="modal fade bs-example-modal-lg"  tabindex="-1" id="ModalNewMarca" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">

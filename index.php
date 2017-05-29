@@ -60,9 +60,11 @@
             
                 <?php
                 include 'Data\ConnectDataBase.php';
-                if (isset($_POST['marcas'])) {
+                if (isset($_POST['marcas']) || isset($_SESSION['pageMarcas'])) 
+                {
                     include 'marca\marcas.php';
-                } elseif (isset($_POST['unidade'])) {
+                } 
+                elseif (isset($_POST['unidade'])) {
                     include 'unidade\unidades.php';
                 } elseif (isset($_POST['produto'])) {
                     include 'produto\produto.php';
